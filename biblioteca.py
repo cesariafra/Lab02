@@ -1,9 +1,19 @@
+from csv import DictReader
 def carica_da_file(file_path):
+    try:
+        with open (file_path, "r") as file:
+            nsezioni=file.readline()
+            biblioteca=list(DictReader(file, fieldnames=['Titolo', 'Autore', 'Anno', 'Pagine', 'Sezione']))
+    except FileNotFoundError:
+        biblioteca=None
+    return biblioteca, nsezioni
     """Carica i libri dal file"""
     # TODO
 
 
 def aggiungi_libro(biblioteca, titolo, autore, anno, pagine, sezione, file_path):
+    with open(file_path, "w") as file:
+
     """Aggiunge un libro nella biblioteca"""
     # TODO
 
