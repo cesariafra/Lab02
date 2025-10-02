@@ -12,7 +12,6 @@ def carica_da_file(file_path):
         return None
     return biblioteca
     """Carica i libri dal file"""
-    # TODO
 
 
 def aggiungi_libro(biblioteca, titolo, autore, anno, pagine, sezione, file_path):
@@ -38,15 +37,23 @@ def aggiungi_libro(biblioteca, titolo, autore, anno, pagine, sezione, file_path)
         libro=None
         return libro
     """Aggiunge un libro nella biblioteca"""
-    # TODO
 
 
 def cerca_libro(biblioteca, titolo):
+    for el in biblioteca:
+        if el['Titolo'] == titolo:
+            risultato=(f"{el['Titolo']}, {el['Autore']}, {el['Anno']}, {el['Pagine']}, {el['Sezione']}")
+    return risultato
     """Cerca un libro nella biblioteca dato il titolo"""
-    # TODO
 
 
 def elenco_libri_sezione_per_titolo(biblioteca, sezione):
+    libri=[]
+    for el in biblioteca:
+        if el['Sezione'] == sezione:
+            libri.append(el)
+
+
     """Ordina i titoli di una data sezione della biblioteca in ordine alfabetico"""
     # TODO
 
