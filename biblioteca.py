@@ -48,14 +48,20 @@ def cerca_libro(biblioteca, titolo):
 
 
 def elenco_libri_sezione_per_titolo(biblioteca, sezione):
-    libri=[]
+    titoli=[]
+    nsezioni=1
+    for el in biblioteca:
+        nsezioni=max(nsezioni, el['Sezione'])
+    if sezione not in range(nsezioni):
+        titoli=None
+        return titoli
     for el in biblioteca:
         if el['Sezione'] == sezione:
-            libri.append(el)
-
+            titoli.append(el['Titolo'])
+    titoli.sort()
+    return titoli
 
     """Ordina i titoli di una data sezione della biblioteca in ordine alfabetico"""
-    # TODO
 
 
 def main():
