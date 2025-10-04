@@ -60,7 +60,6 @@ def elenco_libri_sezione_per_titolo(biblioteca, sezione):
             titoli.append(el['Titolo'])
     titoli.sort()
     return titoli
-
     """Ordina i titoli di una data sezione della biblioteca in ordine alfabetico"""
 
 
@@ -143,4 +142,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
